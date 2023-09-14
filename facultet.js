@@ -142,11 +142,11 @@ function updateCoursesAndGroups() {
     var courseSelect = document.getElementById('course');
     var groupSelect = document.getElementById('group');
 
-    // Очищаем список курсов и групп
+    
     courseSelect.innerHTML = '<option value="">Выберите курс</option>';
     groupSelect.innerHTML = '<option value="">Выберите группу</option>';
 
-    // Если выбран факультет, заполняем список курсов соответствующими значениями
+    
     if (facultySelect.value !== "") {
         var courses = coursesData[facultySelect.value].courses;
         courses.forEach(function(course) {
@@ -163,10 +163,10 @@ function updateGroups() {
     var courseSelect = document.getElementById('course');
     var groupSelect = document.getElementById('group');
 
-    // Очищаем список групп
+    
     groupSelect.innerHTML = '<option value="">Выберите группу</option>';
 
-    // Если выбран факультет и курс, заполняем список групп соответствующими значениями
+    
     if (facultySelect.value !== "" && courseSelect.value !== "") {
         var groups = coursesData[facultySelect.value].groups[courseSelect.value];
         groups.forEach(function(group) {
@@ -195,14 +195,12 @@ function submitForm() {
     }
 
 
-    // Получаем выбранные значения
+    
     var selectedFaculty = facultySelect.value;
     var selectedCourse = courseSelect.value;
     var group = groupSelect.value;
 
-    // Делаем необходимые действия после выбора, например, перенаправляем на другую страницу с расписанием
     
-    // Пример перенаправления на другую страницу с передачей параметров
     var url = 'расписание/' + selectedFaculty + '/расписание_' + group + '.html';
     window.location.href = url;
      
